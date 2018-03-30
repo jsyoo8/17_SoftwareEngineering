@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER_LEFT" stylesheets="@tableview.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GoodsController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+   <ToolBar prefHeight="40.0" prefWidth="200.0">
+     <items>
+       <Button fx:id="ChangePayment" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#handleToPay" text="결제" />
+         <Button fx:id="ChangeBill" alignment="BASELINE_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleToBill" text="영수증" />
+         <Label alignment="CENTER" contentDisplay="TOP" prefHeight="19.0" prefWidth="489.0" text="POS Version 1.0" textAlignment="CENTER" />
+         <Label prefHeight="19.0" prefWidth="525.0" text="Label" />
+     </items>
+   </ToolBar>
+    <TableView fx:id="myTableView">
+        <columns>
+            <TableColumn fx:id="Column1" prefWidth="140" text="상품 번호" />
+            <TableColumn fx:id="Column2" prefWidth="140" text="상품명" />
+            <TableColumn fx:id="Column3" prefWidth="140" text="상품 가격" />
+            <TableColumn fx:id="Column4" prefWidth="140" text="상품 재고" />
+        </columns>
+    </TableView>
+    <HBox>
+        <TextField fx:id="Field12" prefWidth="140" promptText="상품명">
+            <HBox.margin>
+                <Insets right="6" />
+            </HBox.margin>
+        </TextField>
+        <TextField fx:id="Field13" prefWidth="140" promptText="상품 가격">
+            <HBox.margin>
+                <Insets right="6" />
+            </HBox.margin>
+        </TextField>
+        <TextField fx:id="Field14" prefWidth="140" promptText="상품 재고">
+            <HBox.margin>
+                <Insets right="6" />
+            </HBox.margin>
+        </TextField>
+        <Button fx:id="addButton" onAction="#handleAddPerson" prefHeight="30" prefWidth="80" text="Add" />
+        <VBox.margin>
+            <Insets top="6" />
+        </VBox.margin>
+    </HBox>
+   <HBox>
+      <children>
+         <TextField fx:id="Field22" prefWidth="140" promptText="상품명">
+            <HBox.margin>
+               <Insets right="6" />
+            </HBox.margin>
+         </TextField>
+         <TextField fx:id="Field23" prefWidth="140" promptText="상품 가격">
+            <HBox.margin>
+               <Insets right="6" />
+            </HBox.margin>
+         </TextField>
+         <TextField fx:id="Field24" prefWidth="140" promptText="상품 재고">
+            <HBox.margin>
+               <Insets right="6" />
+            </HBox.margin>
+         </TextField>
+         <Button fx:id="setButton" onAction="#handleSetPerson" prefHeight="30" prefWidth="80" text="Set" />
+      </children>
+   </HBox>
+   <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="664.0">
+      <children>
+         <Button fx:id="delButton" mnemonicParsing="false" onAction="#handleDeletePerson" prefHeight="29.0" prefWidth="77.0" text="Del" />
+      </children></HBox>
+</VBox>

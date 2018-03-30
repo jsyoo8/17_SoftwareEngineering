@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER_LEFT" stylesheets="@tableview.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ReceiptController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+    <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+            <Button fx:id="ChangePayment" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#handleToPay" text="결제" />
+            <Button fx:id="ChangeBill" alignment="BASELINE_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleToLookUp" text="상품 목록" />
+            <Label alignment="CENTER" contentDisplay="TOP" prefHeight="19.0" prefWidth="466.0" text="POS Version 1.0" textAlignment="CENTER" />
+            <Label prefHeight="19.0" prefWidth="525.0" text="Label" />
+        </items>
+    </ToolBar>
+    <TableView fx:id="myTableView">
+        <columns>
+            <TableColumn fx:id="Column1" prefWidth="140" text="영수증 번호" />
+            <TableColumn fx:id="Column2" prefWidth="140" text="결제 시간" />
+            <TableColumn fx:id="Column3" prefWidth="140" text="결제 방법" />
+            <TableColumn fx:id="Column4" prefWidth="140" text="가격" />
+        </columns>
+    </TableView>
+    <HBox alignment="TOP_RIGHT" prefHeight="30.0" prefWidth="664.0">
+        <children>
+            <Button fx:id="delButton" mnemonicParsing="false" onAction="#handleDeletePerson" prefHeight="29.0" prefWidth="79.0" text="환불" />
+        </children></HBox>
+</VBox>
